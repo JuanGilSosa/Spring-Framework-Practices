@@ -6,7 +6,10 @@
 
     <bean id="miAuto"
           class="com.Models.Auto">
-
+    </bean>
+    <bean id="miServicio"
+          class="com.Models.SomeService"
+          factory-method="createInstance">
     </bean>
     <!-- more bean definitions for data access objects go here -->
 

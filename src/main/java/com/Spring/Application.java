@@ -11,14 +11,19 @@ public class Application {
 	public static void main(String[] args) {
 		try{
 			ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("service.xml");
+
+			// Bean con Interfaz
 			com.Models.Automovil fiat = context.getBean("miAuto", com.Models.Automovil.class);
 			System.out.println(fiat.andar());
+
+			// Bean con clase Singleton
+			com.Models.SomeService s = context.getBean("miServicio", com.Models.SomeService.class);
+			System.out.println(s.data());
+
 			context.close();
 		}catch(BeanCreationException | BeanInstantiationException ignore){
 			System.out.println(ignore.getMessage());
 		}
-
-
 	}
 
 
