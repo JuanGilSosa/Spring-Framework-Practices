@@ -18,11 +18,12 @@ public class Application {
 
 			// Bean con clase Singleton
 			com.Models.SomeService s = context.getBean("miServicio", com.Models.SomeService.class);
-			System.out.println(s.data());
+			s.setData("Esto es Spring Framework - Probando la Inversion de Control");
+			System.out.println(s.getData());
 
 			context.close();
 		}catch(BeanCreationException | BeanInstantiationException ignore){
-			System.out.println(ignore.getMessage());
+
 		}
 	}
 
