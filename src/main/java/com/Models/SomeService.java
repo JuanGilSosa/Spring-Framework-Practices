@@ -1,4 +1,7 @@
 package com.Models;
+
+import java.beans.ConstructorProperties;
+
 /**
  * @author juan gil sosa
  * <p>
@@ -8,17 +11,26 @@ package com.Models;
  * </p>
  * */
 public class SomeService {
+
     private static final SomeService myService = new SomeService();
     private String data;
+
     public SomeService(){
-        this.data = "";
+        this("");
     }
+    @ConstructorProperties({"data"})
+    public SomeService(String data){
+        this.data = data;
+    }
+
     public static SomeService createInstance() {
         return myService;
     }
+
     public String getData(){
         return this.data;
     }
+
     public void setData(String data){
         this.data = data;
     }
